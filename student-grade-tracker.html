@@ -1,1 +1,710 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Student Grade Tracker - Nisha N's CodeAlpha Java project."><title>Student Grade Tracker | Nisha N</title><link rel="stylesheet" href="style.css"></head><body><header class="wrap nav"><a class="brand" href="index.html">NISHA<span>.</span> <span>JAVA PORTFOLIO</span></a><nav class="navlinks"><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="https://github.com/nishaediga193-tech" target="_blank" rel="noopener">GitHub ↗</a></nav></header><main class="wrap"><section class="detailhero"><a class="back" href="index.html">← Back to all projects</a><div style="margin-top:24px"><span class="eyebrow">PROJECT 01 · CODEALPHA JAVA</span></div><h1>Student Grade Tracker</h1><p class="lead">A Java console application to record student marks, calculate grades, and summarize academic performance.</p><div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Collections</span></div><div class="actions"><a class="btn" href="https://github.com/nishaediga193-tech/CodeAlpha_StudentGradeTracker" target="_blank" rel="noopener">View source code on GitHub ↗</a><a class="btn secondary" href="index.html#projects">Portfolio home</a></div></section><section class="detailgrid"><article class="panel"><h2>Project overview</h2><p class="muted">A Java console application to record student marks, calculate grades, and summarize academic performance. This project is part of my CodeAlpha Java Programming Internship portfolio and demonstrates applying programming concepts to a practical scenario.</p><h2>What this project focuses on</h2><ul><li>Organising code into clear, understandable program logic.</li><li>Practising core Java and object-oriented programming concepts.</li><li>Handling user actions and displaying useful results.</li><li>Building confidence through hands-on implementation and testing.</li></ul><div class="notice">For exact features and implementation details, please open the source repository linked above.</div></article><aside class="panel"><h2>Project details</h2><p><strong>Project</strong><br><span class="muted">Student Grade Tracker</span></p><p><strong>Language</strong><br><span class="muted">Java</span></p><p><strong>Repository</strong><br><a class="textlink" href="https://github.com/nishaediga193-tech/CodeAlpha_StudentGradeTracker" target="_blank" rel="noopener">CodeAlpha_StudentGradeTracker ↗</a></p><p><strong>Portfolio owner</strong><br><span class="muted">Nisha N</span></p></aside></section></main><footer class="wrap footer"><div>© 2026 <strong>Nisha N</strong> · CodeAlpha Java Programming Internship</div><div>Built with Java project work · Hosted with GitHub Pages</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Student Grade Tracker - Nisha N's CodeAlpha Java Project. Manage grades, calculate GPA, statistical analytics, and live interactive demo.">
+  <title>Student Grade Tracker | Nisha N - CodeAlpha Java</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav-wrap">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">N</span>
+        <span>NISHA<span class="accent">.</span></span>
+        <span class="subtag">Task 01</span>
+      </a>
+      <nav class="navlinks">
+        <a href="index.html">← All Projects</a>
+        <a href="#interactive-suite">User Input &amp; Output</a>
+        <a href="#video">Video Walkthrough</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#terminal">Terminal Run</a>
+        <a href="https://github.com/nishaediga193-tech/CodeAlpha_StudentGradeTracker" target="_blank" rel="noopener" class="nav-cta">GitHub Repo ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <span class="eyebrow"><span class="pulse-dot"></span> TASK 01 · CODEALPHA JAVA INTERNSHIP</span>
+        <span class="tag primary">Object-Oriented Programming</span>
+        <span class="tag">Collections Framework</span>
+      </div>
+      <h1>Student Grade <span class="gradient">Tracker.</span></h1>
+      <p class="lead">
+        A Java-engineered academic performance management system. Computes weighted grade statistics, overall class averages, highest/lowest scores, and GPA rankings with defensive input validation.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="#interactive-suite">⚡ Open Input &amp; Output Suite ↓</a>
+        <a class="btn secondary" href="#video">▶ Watch Demo Video</a>
+        <a class="btn secondary" href="https://github.com/nishaediga193-tech/CodeAlpha_StudentGradeTracker" target="_blank" rel="noopener">Source Code ↗</a>
+      </div>
+
+      <!-- KEY HIGHLIGHT STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num highlight">O(1)</div>
+          <div class="stat-label">Lookup Efficiency</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num blue">100%</div>
+          <div class="stat-label">Input Validation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num purple">4.0</div>
+          <div class="stat-label">Standard GPA Scale</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">A–F</div>
+          <div class="stat-label">Letter Grade Auto-Assign</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE USER INPUT & OUTPUT SUITE (SAME WEB ONLY) -->
+    <section class="demo-section" id="interactive-suite">
+      <div class="section-head">
+        <div>
+          <h2>Interactive User Input &amp; Output Suite</h2>
+          <p>Use the dedicated <strong>INPUT</strong> and <strong>OUTPUT</strong> buttons below to enter data and generate comprehensive performance reports directly on this page.</p>
+        </div>
+        <span class="demo-badge">IN-BROWSER SUITE</span>
+      </div>
+
+      <!-- USER BUTTONS FOR INPUT AND OUTPUT -->
+      <div class="io-control-bar">
+        <button class="io-btn input-btn" onclick="showInputPanel()">
+          <span>📥</span> USER INPUT: Enter Student &amp; Grades
+        </button>
+        <button class="io-btn output-btn" onclick="generateOutputReport()">
+          <span>📊</span> USER OUTPUT: Generate Report Card
+        </button>
+        <button class="io-btn terminal-btn" onclick="toggleTerminalOutput()">
+          <span>💻</span> JAVA CLI OUTPUT: View Console Box
+        </button>
+        <button class="btn secondary sm" onclick="loadDemoClass()">
+          <span>↺</span> Load Demo Data
+        </button>
+        <button class="btn danger sm" onclick="clearAllData()">
+          <span>🗑</span> Clear All
+        </button>
+      </div>
+
+      <!-- USER INPUT PANEL -->
+      <div class="io-panel-box" id="userInputPanel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+          <h3 style="display:flex; align-items:center; gap:8px; font-size:1.15rem; color:var(--primary-light);">
+            <span>📥</span> Student Grade Input Form
+          </h3>
+          <span style="font-size:0.8rem; color:var(--text-dim);">Accepts scores from 0.0 to 100.0</span>
+        </div>
+
+        <form id="gradeInputForm" onsubmit="event.preventDefault(); submitUserInput();">
+          <div class="form-row">
+            <div class="form-group" style="flex: 1.5;">
+              <label>Student Full Name</label>
+              <input type="text" id="inputStudentName" class="form-control" placeholder="e.g. Alice Smith" required>
+            </div>
+            <div class="form-group">
+              <label>Subject / Course</label>
+              <input type="text" id="inputSubject" class="form-control" placeholder="e.g. Computer Science" value="Mathematics">
+            </div>
+            <div class="form-group">
+              <label>Score / Grade (0 - 100)</label>
+              <input type="number" id="inputScore" class="form-control" min="0" max="100" step="0.1" placeholder="e.g. 92.5" required>
+            </div>
+            <div class="form-group" style="align-self:flex-end;">
+              <button type="submit" class="btn" style="width:100%;">
+                <span>➕</span> Submit Input
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div id="inputFeedback" style="display:none; margin-top:12px; padding:10px 14px; border-radius:8px; font-size:0.88rem;"></div>
+      </div>
+
+      <!-- USER OUTPUT PANEL -->
+      <div class="io-panel-box" id="userOutputPanel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
+          <h3 style="display:flex; align-items:center; gap:8px; font-size:1.15rem; color:#60a5fa;">
+            <span>📊</span> Academic Performance Output Report
+          </h3>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <span style="font-size:0.82rem; color:var(--text-dim);" id="outputTimestamp">Updated: Just now</span>
+            <button class="btn secondary sm" onclick="window.print()">🖨 Print / PDF</button>
+          </div>
+        </div>
+
+        <!-- SUMMARY STATS TILES -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:14px; margin-bottom:20px;">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:16px;">
+            <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Class Average</span>
+            <div style="font-size:1.6rem; font-weight:800; color:var(--primary-light);" id="outClassAvg">--</div>
+            <div style="font-size:0.78rem; color:var(--text-dim);" id="outClassGrade">Grade: --</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:16px;">
+            <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Class Highest</span>
+            <div style="font-size:1.6rem; font-weight:800; color:#60a5fa;" id="outClassHigh">--</div>
+            <div style="font-size:0.78rem; color:var(--text-dim);" id="outClassHighName">Top student score</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:16px;">
+            <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Class Lowest</span>
+            <div style="font-size:1.6rem; font-weight:800; color:#fb923c;" id="outClassLow">--</div>
+            <div style="font-size:0.78rem; color:var(--text-dim);" id="outClassLowName">Lowest score</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:16px;">
+            <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Pass Percentage</span>
+            <div style="font-size:1.6rem; font-weight:800; color:#a78bfa;" id="outPassRate">--</div>
+            <div style="font-size:0.78rem; color:var(--text-dim);" id="outTotalStudents">0 Students Total</div>
+          </div>
+        </div>
+
+        <!-- TOP PERFORMER & NEEDS SUPPORT BANNERS -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:20px;">
+          <div style="background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:14px; display:flex; align-items:center; gap:12px;">
+            <span style="font-size:1.5rem;">🏆</span>
+            <div>
+              <div style="font-size:0.75rem; color:var(--primary-light); font-weight:700; text-transform:uppercase;">Top Performer</div>
+              <div style="font-size:1rem; font-weight:800;" id="outTopPerformer">None yet</div>
+            </div>
+          </div>
+          <div style="background:rgba(249,115,22,0.07); border:1px solid rgba(249,115,22,0.3); border-radius:10px; padding:14px; display:flex; align-items:center; gap:12px;">
+            <span style="font-size:1.5rem;">📉</span>
+            <div>
+              <div style="font-size:0.75rem; color:#fb923c; font-weight:700; text-transform:uppercase;">Needs Academic Support</div>
+              <div style="font-size:1rem; font-weight:800;" id="outNeedsSupport">None yet</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDENT REPORT TABLE -->
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Student Name</th>
+                <th>Subjects Count</th>
+                <th>Entered Scores</th>
+                <th>Average %</th>
+                <th>Highest</th>
+                <th>Lowest</th>
+                <th>Letter Grade</th>
+                <th>GPA (4.0)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="outTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- VISUAL PERFORMANCE BAR CHART -->
+        <div style="margin-top:24px; padding:20px; background:rgba(0,0,0,0.3); border-radius:12px; border:1px solid var(--line);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+            <h4 style="font-size:0.95rem; color:var(--text); display:flex; align-items:center; gap:6px;">
+              <span>📊</span> Student Performance Bar Chart
+            </h4>
+            <span style="font-size:0.78rem; color:var(--text-dim);">Scale: 0% to 100%</span>
+          </div>
+          <div id="outBarChartContainer" style="display:flex; flex-direction:column; gap:10px;">
+            <!-- Horizontal visual bars injected -->
+          </div>
+        </div>
+      </div>
+
+      <!-- JAVA CLI ASCII CONSOLE TERMINAL OUTPUT (MATCHING Main.java & GradeTracker.java) -->
+      <div class="io-panel-box" id="terminalOutputBox" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="font-size:1.05rem; color:#a78bfa; display:flex; align-items:center; gap:8px;">
+            <span>💻</span> Simulated Java Console Output (Exact Terminal CLI)
+          </h3>
+          <button class="btn secondary sm" onclick="copyConsoleOutput()">Copy Terminal Text</button>
+        </div>
+        <div class="console-terminal" id="consoleOutputText">
+          Loading Java terminal output...
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO DEMO SHOWCASE -->
+    <section class="demo-section" id="video">
+      <div class="section-head">
+        <div>
+          <h2>Official Video Walkthrough</h2>
+          <p>Watch the Java application in action handling student records, inputs, and generating console reports.</p>
+        </div>
+        <span class="tag">TASK 1.mp4</span>
+      </div>
+
+      <div class="video-card">
+        <div class="video-header">
+          <h3><span>▶</span> Task 1 Demonstration — Student Grade Tracker Execution</h3>
+          <span style="font-size:0.82rem; color:var(--primary-light);">Full HD 1080p Recording</span>
+        </div>
+        <div class="video-player-box">
+          <video controls preload="metadata">
+            <source src="TASK 1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-footer">
+          <div>Recorded by <strong>Nisha N</strong> · CodeAlpha Java Internship Task 1</div>
+          <a href="TASK 1.mp4" download class="btn secondary sm">Download Video ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODE ARCHITECTURE & SYSTEM DESIGN -->
+    <section class="demo-section" id="architecture">
+      <div class="section-head">
+        <div>
+          <h2>System Architecture &amp; Java OOP Design</h2>
+          <p>Built following robust Object-Oriented principles, separating data models, business logic, and UI execution.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:30px;">
+        <div class="stat-card">
+          <h3 style="color:var(--primary-light); margin-bottom:8px;">Student.java</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">
+            Encapsulates student identity and an internal <code style="color:#60a5fa;">ArrayList&lt;Double&gt;</code> of marks. Provides getter/setter boundaries and computes student-level metrics.
+          </p>
+          <ul style="margin:12px 0 0 18px; color:var(--text-dim); font-size:0.84rem;">
+            <li><code style="color:#fde047;">getAverage()</code>: Sum of grades / count</li>
+            <li><code style="color:#fde047;">getHighest()</code>: Peak recorded score</li>
+            <li><code style="color:#fde047;">getLowest()</code>: Minimum recorded score</li>
+          </ul>
+        </div>
+
+        <div class="stat-card">
+          <h3 style="color:#60a5fa; margin-bottom:8px;">GradeTracker.java</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">
+            Acts as the controller maintaining the master registry of all students. Implements class-wide statistics, duplicate prevention, and tabular formatting.
+          </p>
+          <ul style="margin:12px 0 0 18px; color:var(--text-dim); font-size:0.84rem;">
+            <li>Case-insensitive student lookup</li>
+            <li>Dynamic ASCII formatted summary table</li>
+            <li>Class-wide highest, lowest &amp; average computation</li>
+          </ul>
+        </div>
+
+        <div class="stat-card">
+          <h3 style="color:#a78bfa; margin-bottom:8px;">Main.java</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">
+            Interactive CLI driver with Scanner input, robust exception handling, and an easy menu-driven interface for seamless command execution.
+          </p>
+          <ul style="margin:12px 0 0 18px; color:var(--text-dim); font-size:0.84rem;">
+            <li>Menu Loop with exit validation</li>
+            <li>Defensive numeric parsing</li>
+            <li>Real-time console updates</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CODE EXPLORER TABS -->
+      <div class="code-panel">
+        <div class="code-header">
+          <div class="code-tabs">
+            <button class="code-tab active" onclick="switchCode('student')">Student.java</button>
+            <button class="code-tab" onclick="switchCode('tracker')">GradeTracker.java</button>
+          </div>
+          <span>Java 25 LTS</span>
+        </div>
+        <pre class="code-block" id="codeDisplay"><span class="kw">public class</span> <span class="type">Student</span> {
+    <span class="kw">private</span> <span class="type">String</span> name;
+    <span class="kw">private</span> <span class="type">List&lt;Double&gt;</span> grades;
+
+    <span class="kw">public</span> <span class="fn">Student</span>(<span class="type">String</span> name) {
+        <span class="kw">this</span>.name = name;
+        <span class="kw">this</span>.grades = <span class="kw">new</span> <span class="type">ArrayList&lt;&gt;</span>();
+    }
+
+    <span class="kw">public void</span> <span class="fn">addGrade</span>(<span class="type">double</span> grade) {
+        grades.<span class="fn">add</span>(grade);
+    }
+
+    <span class="kw">public double</span> <span class="fn">getAverage</span>() {
+        <span class="kw">if</span> (grades.<span class="fn">isEmpty</span>()) <span class="kw">return</span> <span class="num">0.0</span>;
+        <span class="type">double</span> sum = <span class="num">0</span>;
+        <span class="kw">for</span> (<span class="type">double</span> g : grades) sum += g;
+        <span class="kw">return</span> sum / grades.<span class="fn">size</span>();
+    }
+}</pre>
+      </div>
+    </section>
+
+    <!-- TERMINAL RUN GUIDE -->
+    <section class="demo-section" id="terminal">
+      <div class="section-head">
+        <div>
+          <h2>How to Run Locally in Terminal</h2>
+          <p>Navigate into the task folder and compile the Java sources using the standard JDK.</p>
+        </div>
+      </div>
+
+      <div style="background:#090e1a; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px;">
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:12px;">Compile and run Main class directly:</p>
+        <pre style="background:#04070e; padding:14px; border-radius:8px; border:1px solid var(--line); color:#34d399; font-family:var(--font-mono); font-size:0.92rem; overflow-x:auto;">
+cd Task1_StudentGradeTracker
+javac *.java
+java Main</pre>
+      </div>
+    </section>
+
+    <!-- PROJECT NAVIGATOR -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-top:1px solid var(--line); margin-top:60px; flex-wrap:wrap; gap:16px;">
+      <a href="index.html" class="btn secondary">← Back to Portfolio Overview</a>
+      <a href="stock-trading-platform.html" class="btn">Next Project: Stock Trading Platform →</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-wrap">
+    <div class="wrap footer-content">
+      <div>
+        © 2026 <strong>Nisha N</strong> · CodeAlpha Java Programming Internship
+      </div>
+      <div class="footer-nav">
+        <a href="student-grade-tracker.html">Task 1</a>
+        <a href="stock-trading-platform.html">Task 2</a>
+        <a href="alphabot-chatbot.html">Task 3</a>
+        <a href="hotel-reservation.html">Task 4</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ENGINE -->
+  <script>
+    // State matching Java GradeTracker
+    let students = [
+      { name: "Alice", grades: [92.0, 88.0, 95.0] },
+      { name: "Bob", grades: [74.0, 68.0, 79.0] },
+      { name: "Carol", grades: [55.0, 62.0, 58.0] },
+      { name: "David", grades: [85.0, 90.0, 88.0] }
+    ];
+
+    function calculateGrade(avg) {
+      if (avg >= 90) return { letter: "A+", gpa: 4.0, class: "A" };
+      if (avg >= 80) return { letter: "A",  gpa: 3.7, class: "A" };
+      if (avg >= 70) return { letter: "B",  gpa: 3.0, class: "B" };
+      if (avg >= 60) return { letter: "C",  gpa: 2.0, class: "C" };
+      if (avg >= 50) return { letter: "D",  gpa: 1.0, class: "D" };
+      return { letter: "F", gpa: 0.0, class: "F" };
+    }
+
+    function showInputPanel() {
+      const panel = document.getElementById("userInputPanel");
+      panel.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById("inputStudentName").focus();
+    }
+
+    function submitUserInput() {
+      const nameInput = document.getElementById("inputStudentName");
+      const scoreInput = document.getElementById("inputScore");
+      const name = nameInput.value.trim();
+      const score = parseFloat(scoreInput.value);
+
+      const feedback = document.getElementById("inputFeedback");
+
+      if (!name) {
+        showFeedback("Student name cannot be empty.", "#f87171", "rgba(239,68,68,0.15)");
+        return;
+      }
+
+      if (isNaN(score) || score < 0 || score > 100) {
+        showFeedback("Grade must be between 0 and 100.", "#f87171", "rgba(239,68,68,0.15)");
+        return;
+      }
+
+      let existing = students.find(s => s.name.toLowerCase() === name.toLowerCase());
+      if (existing) {
+        existing.grades.push(score);
+        showFeedback(`[+] Added grade ${score.toFixed(1)} for existing student "${existing.name}".`, "#34d399", "rgba(16,185,129,0.15)");
+      } else {
+        students.push({ name: name, grades: [score] });
+        showFeedback(`[+] Registered new student "${name}" with initial grade ${score.toFixed(1)}.`, "#34d399", "rgba(16,185,129,0.15)");
+      }
+
+      scoreInput.value = "";
+      nameInput.value = "";
+      generateOutputReport();
+    }
+
+    function showFeedback(msg, color, bg) {
+      const el = document.getElementById("inputFeedback");
+      el.style.display = "block";
+      el.style.color = color;
+      el.style.backgroundColor = bg;
+      el.style.border = `1px solid ${color}`;
+      el.innerHTML = msg;
+      setTimeout(() => {
+        el.style.display = "none";
+      }, 5000);
+    }
+
+    function generateOutputReport() {
+      const tbody = document.getElementById("outTableBody");
+      const barContainer = document.getElementById("outBarChartContainer");
+      tbody.innerHTML = "";
+      barContainer.innerHTML = "";
+
+      let classSum = 0;
+      let totalCount = 0;
+      let classHigh = -Infinity;
+      let classLow = Infinity;
+      let passCount = 0;
+      let topStudent = null;
+      let lowStudent = null;
+
+      students.forEach((s, idx) => {
+        const sum = s.grades.reduce((a, b) => a + b, 0);
+        const avg = s.grades.length ? (sum / s.grades.length) : 0;
+        const high = s.grades.length ? Math.max(...s.grades) : 0;
+        const low = s.grades.length ? Math.min(...s.grades) : 0;
+
+        if (s.grades.length > 0) {
+          classSum += avg;
+          totalCount++;
+          if (high > classHigh) classHigh = high;
+          if (low < classLow) classLow = low;
+          if (avg >= 50) passCount++;
+
+          if (!topStudent || avg > topStudent.avg) topStudent = { name: s.name, avg };
+          if (!lowStudent || avg < lowStudent.avg) lowStudent = { name: s.name, avg };
+        }
+
+        const gradeInfo = calculateGrade(avg);
+
+        // Render Table Row
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${idx + 1}</td>
+          <td><strong>${s.name}</strong></td>
+          <td>${s.grades.length}</td>
+          <td><span style="color:var(--text-dim); font-size:0.85rem;">${s.grades.map(g => g.toFixed(1)).join(", ") || "N/A"}</span></td>
+          <td><strong style="color:var(--primary-light);">${avg.toFixed(1)}%</strong></td>
+          <td style="color:#60a5fa;">${s.grades.length ? high.toFixed(1) : "N/A"}</td>
+          <td style="color:#fb923c;">${s.grades.length ? low.toFixed(1) : "N/A"}</td>
+          <td><span class="badge-grade ${gradeInfo.class}">${gradeInfo.letter}</span></td>
+          <td>${gradeInfo.gpa.toFixed(1)}</td>
+          <td>
+            <button class="btn danger sm" onclick="deleteStudentRecord(${idx})" title="Delete student">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+
+        // Render Visual Performance Bar
+        if (s.grades.length > 0) {
+          const barColor = avg >= 80 ? '#34d399' : avg >= 60 ? '#60a5fa' : '#f87171';
+          const row = document.createElement("div");
+          row.style.display = "flex";
+          row.style.alignItems = "center";
+          row.style.gap = "14px";
+          row.innerHTML = `
+            <div style="width:110px; font-size:0.85rem; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${s.name}</div>
+            <div style="flex:1; background:rgba(255,255,255,0.06); height:14px; border-radius:7px; overflow:hidden; position:relative;">
+              <div style="width:${Math.min(100, Math.max(0, avg))}%; background:${barColor}; height:100%; border-radius:7px; transition:width 0.4s ease;"></div>
+            </div>
+            <div style="width:75px; text-align:right; font-size:0.85rem; font-weight:800; color:${barColor};">${avg.toFixed(1)}%</div>
+          `;
+          barContainer.appendChild(row);
+        }
+      });
+
+      if (students.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; padding:24px; color:var(--text-dim);">No students entered yet. Click [USER INPUT] above to add records.</td></tr>`;
+      }
+
+      // Update Summary Cards
+      if (totalCount > 0) {
+        const classAvg = classSum / totalCount;
+        const classGrade = calculateGrade(classAvg);
+        document.getElementById("outClassAvg").innerText = classAvg.toFixed(1) + "%";
+        document.getElementById("outClassGrade").innerText = `Letter Grade: ${classGrade.letter} (GPA ${classGrade.gpa.toFixed(1)})`;
+        document.getElementById("outClassHigh").innerText = classHigh.toFixed(1);
+        document.getElementById("outClassLow").innerText = classLow.toFixed(1);
+        document.getElementById("outPassRate").innerText = ((passCount / students.length) * 100).toFixed(0) + "%";
+        document.getElementById("outTotalStudents").innerText = `${students.length} Students Total`;
+
+        if (topStudent) {
+          document.getElementById("outTopPerformer").innerHTML = `${topStudent.name} (<span style="color:var(--primary-light);">${topStudent.avg.toFixed(1)}%</span>)`;
+        }
+        if (lowStudent) {
+          document.getElementById("outNeedsSupport").innerHTML = `${lowStudent.name} (<span style="color:#fb923c;">${lowStudent.avg.toFixed(1)}%</span>)`;
+        }
+      } else {
+        document.getElementById("outClassAvg").innerText = "--";
+        document.getElementById("outClassGrade").innerText = "Grade: --";
+        document.getElementById("outClassHigh").innerText = "--";
+        document.getElementById("outClassLow").innerText = "--";
+        document.getElementById("outPassRate").innerText = "--";
+        document.getElementById("outTotalStudents").innerText = "0 Students Total";
+        document.getElementById("outTopPerformer").innerText = "None yet";
+        document.getElementById("outNeedsSupport").innerText = "None yet";
+      }
+
+      document.getElementById("outputTimestamp").innerText = `Updated: ${new Date().toLocaleTimeString()}`;
+      buildConsoleAscii();
+
+      // Scroll smoothly to output
+      const outPanel = document.getElementById("userOutputPanel");
+      outPanel.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function buildConsoleAscii() {
+      let txt = `  ╔══════════════════════════════════════════════════════════════╗\n`;
+      txt += `  ║              STUDENT GRADE SUMMARY REPORT                  ║\n`;
+      txt += `  ╠══════════╦══════════╦══════════╦══════════╦════════╦═══════╣\n`;
+      txt += `  ║ Student  ║ Subjects ║ Average  ║ Highest  ║ Lowest ║ Grade ║\n`;
+      txt += `  ╠══════════╬══════════╬══════════╬══════════╬════════╬═══════╣\n`;
+
+      let classSum = 0;
+      let count = 0;
+      let high = -Infinity;
+      let low = Infinity;
+
+      students.forEach(s => {
+        const sum = s.grades.reduce((a, b) => a + b, 0);
+        const avg = s.grades.length ? (sum / s.grades.length) : 0;
+        const h = s.grades.length ? Math.max(...s.grades) : 0;
+        const l = s.grades.length ? Math.min(...s.grades) : 0;
+        const g = calculateGrade(avg).letter;
+
+        if (s.grades.length > 0) {
+          classSum += avg;
+          count++;
+          if (h > high) high = h;
+          if (l < low) low = l;
+        }
+
+        const namePadded = (s.name.length > 8 ? s.name.substring(0, 8) : s.name).padEnd(8, ' ');
+        const subPadded = String(s.grades.length).padEnd(8, ' ');
+        const avgPadded = (avg.toFixed(2)).padEnd(8, ' ');
+        const highPadded = (h.toFixed(2)).padEnd(8, ' ');
+        const lowPadded = (l.toFixed(2)).padEnd(6, ' ');
+        const gPadded = g.padEnd(5, ' ');
+
+        txt += `  ║ ${namePadded} ║ ${subPadded} ║ ${avgPadded} ║ ${highPadded} ║ ${lowPadded} ║ ${gPadded} ║\n`;
+      });
+
+      txt += `  ╚══════════╩══════════╩══════════╩══════════╩════════╩═══════╝\n\n`;
+
+      if (count > 0) {
+        const avg = classSum / count;
+        txt += `  CLASS STATISTICS:\n`;
+        txt += `    Class Average : ${avg.toFixed(2)}  (${calculateGrade(avg).letter})\n`;
+        txt += `    Class Highest : ${high.toFixed(2)}\n`;
+        txt += `    Class Lowest  : ${low.toFixed(2)}\n`;
+        txt += `    Total Students: ${students.length}\n`;
+      }
+
+      document.getElementById("consoleOutputText").innerText = txt;
+    }
+
+    function toggleTerminalOutput() {
+      const box = document.getElementById("terminalOutputBox");
+      if (box.style.display === "none") {
+        box.style.display = "block";
+        buildConsoleAscii();
+        box.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        box.style.display = "none";
+      }
+    }
+
+    function copyConsoleOutput() {
+      const txt = document.getElementById("consoleOutputText").innerText;
+      navigator.clipboard.writeText(txt).then(() => {
+        alert("Java Console ASCII report copied to clipboard!");
+      });
+    }
+
+    function deleteStudentRecord(idx) {
+      if (confirm(`Remove ${students[idx].name} from records?`)) {
+        students.splice(idx, 1);
+        generateOutputReport();
+      }
+    }
+
+    function loadDemoClass() {
+      students = [
+        { name: "Alice", grades: [92.0, 88.0, 95.0] },
+        { name: "Bob", grades: [74.0, 68.0, 79.0] },
+        { name: "Carol", grades: [55.0, 62.0, 58.0] },
+        { name: "David", grades: [85.0, 90.0, 88.0] },
+        { name: "Emma", grades: [98.0, 96.5, 94.0] }
+      ];
+      generateOutputReport();
+      showFeedback("[*] Loaded demo class dataset (5 students).", "#34d399", "rgba(16,185,129,0.15)");
+    }
+
+    function clearAllData() {
+      if (confirm("Clear all student grade records?")) {
+        students = [];
+        generateOutputReport();
+      }
+    }
+
+    const codeSnippets = {
+      student: `<span class="kw">public class</span> <span class="type">Student</span> {
+    <span class="kw">private</span> <span class="type">String</span> name;
+    <span class="kw">private</span> <span class="type">List&lt;Double&gt;</span> grades;
+
+    <span class="kw">public</span> <span class="fn">Student</span>(<span class="type">String</span> name) {
+        <span class="kw">this</span>.name = name;
+        <span class="kw">this</span>.grades = <span class="kw">new</span> <span class="type">ArrayList&lt;&gt;</span>();
+    }
+
+    <span class="kw">public void</span> <span class="fn">addGrade</span>(<span class="type">double</span> grade) {
+        grades.<span class="fn">add</span>(grade);
+    }
+
+    <span class="kw">public double</span> <span class="fn">getAverage</span>() {
+        <span class="kw">if</span> (grades.<span class="fn">isEmpty</span>()) <span class="kw">return</span> <span class="num">0.0</span>;
+        <span class="type">double</span> sum = <span class="num">0</span>;
+        <span class="kw">for</span> (<span class="type">double</span> g : grades) sum += g;
+        <span class="kw">return</span> sum / grades.<span class="fn">size</span>();
+    }
+}`,
+      tracker: `<span class="kw">public class</span> <span class="type">GradeTracker</span> {
+    <span class="kw">private</span> <span class="type">List&lt;Student&gt;</span> students;
+
+    <span class="kw">public</span> <span class="fn">GradeTracker</span>() {
+        <span class="kw">this</span>.students = <span class="kw">new</span> <span class="type">ArrayList&lt;&gt;</span>();
+    }
+
+    <span class="kw">public void</span> <span class="fn">displayReport</span>() {
+        <span class="type">double</span> classAvg = <span class="num">0</span>, classHigh = <span class="type">Double</span>.MIN_VALUE, classLow = <span class="type">Double</span>.MAX_VALUE;
+        <span class="kw">for</span> (<span class="type">Student</span> s : students) {
+            <span class="kw">if</span> (!s.<span class="fn">getGrades</span>().<span class="fn">isEmpty</span>()) {
+                classAvg += s.<span class="fn">getAverage</span>();
+                <span class="kw">if</span> (s.<span class="fn">getHighest</span>() &gt; classHigh) classHigh = s.<span class="fn">getHighest</span>();
+                <span class="kw">if</span> (s.<span class="fn">getLowest</span>() &lt; classLow) classLow = s.<span class="fn">getLowest</span>();
+            }
+        }
+    }
+}`
+    };
+
+    function switchCode(tab) {
+      document.querySelectorAll('.code-tab').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('codeDisplay').innerHTML = codeSnippets[tab];
+    }
+
+    // Initialize report immediately on page load
+    generateOutputReport();
+  </script>
+</body>
+</html>

@@ -1,1 +1,633 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Stock Trading Platform - Nisha N's CodeAlpha Java project."><title>Stock Trading Platform | Nisha N</title><link rel="stylesheet" href="style.css"></head><body><header class="wrap nav"><a class="brand" href="index.html">NISHA<span>.</span> <span>JAVA PORTFOLIO</span></a><nav class="navlinks"><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="https://github.com/nishaediga193-tech" target="_blank" rel="noopener">GitHub ↗</a></nav></header><main class="wrap"><section class="detailhero"><a class="back" href="index.html">← Back to all projects</a><div style="margin-top:24px"><span class="eyebrow">PROJECT 02 · CODEALPHA JAVA</span></div><h1>Stock Trading Platform</h1><p class="lead">A simulated stock trading application for viewing stock prices, buying and selling shares, and tracking a portfolio balance.</p><div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Transactions</span></div><div class="actions"><a class="btn" href="https://github.com/nishaediga193-tech/CodeAlpha_StockTradingPlatform" target="_blank" rel="noopener">View source code on GitHub ↗</a><a class="btn secondary" href="index.html#projects">Portfolio home</a></div></section><section class="detailgrid"><article class="panel"><h2>Project overview</h2><p class="muted">A simulated stock trading application for viewing stock prices, buying and selling shares, and tracking a portfolio balance. This project is part of my CodeAlpha Java Programming Internship portfolio and demonstrates applying programming concepts to a practical scenario.</p><h2>What this project focuses on</h2><ul><li>Organising code into clear, understandable program logic.</li><li>Practising core Java and object-oriented programming concepts.</li><li>Handling user actions and displaying useful results.</li><li>Building confidence through hands-on implementation and testing.</li></ul><div class="notice">For exact features and implementation details, please open the source repository linked above.</div></article><aside class="panel"><h2>Project details</h2><p><strong>Project</strong><br><span class="muted">Stock Trading Platform</span></p><p><strong>Language</strong><br><span class="muted">Java</span></p><p><strong>Repository</strong><br><a class="textlink" href="https://github.com/nishaediga193-tech/CodeAlpha_StockTradingPlatform" target="_blank" rel="noopener">CodeAlpha_StockTradingPlatform ↗</a></p><p><strong>Portfolio owner</strong><br><span class="muted">Nisha N</span></p></aside></section></main><footer class="wrap footer"><div>© 2026 <strong>Nisha N</strong> · CodeAlpha Java Programming Internship</div><div>Built with Java project work · Hosted with GitHub Pages</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stock Trading Platform - Nisha N's CodeAlpha Java Project. Simulated market trading, live portfolio valuation, and interactive order book.">
+  <title>Stock Trading Platform | Nisha N - CodeAlpha Java</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav-wrap">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">N</span>
+        <span>NISHA<span class="accent">.</span></span>
+        <span class="subtag">Task 02</span>
+      </a>
+      <nav class="navlinks">
+        <a href="index.html">← All Projects</a>
+        <a href="#demo">Live Exchange</a>
+        <a href="#video">Video Walkthrough</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#terminal">Terminal Run</a>
+        <a href="https://github.com/nishaediga193-tech/CodeAlpha_StockTradingPlatform" target="_blank" rel="noopener" class="nav-cta">GitHub Repo ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <span class="eyebrow"><span class="pulse-dot"></span> TASK 02 · CODEALPHA JAVA INTERNSHIP</span>
+        <span class="tag primary">Financial Engineering</span>
+        <span class="tag">Transaction Ledger</span>
+      </div>
+      <h1>Stock Trading <span class="gradient">Platform.</span></h1>
+      <p class="lead">
+        A high-performance simulated equities trading engine. Model real-time market fluctuations, execute instant buy/sell orders, evaluate portfolio yield, and track audited transaction histories.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="#demo">📈 Open Trading Terminal ↓</a>
+        <a class="btn secondary" href="#video">▶ Watch Demo Video</a>
+        <a class="btn secondary" href="https://github.com/nishaediga193-tech/CodeAlpha_StockTradingPlatform" target="_blank" rel="noopener">Source Code ↗</a>
+      </div>
+
+      <!-- KEY HIGHLIGHT STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num highlight">$10,000</div>
+          <div class="stat-label">Initial Buying Power</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num blue">8 Assets</div>
+          <div class="stat-label">Tech Blue-Chip Equities</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num purple">Real-Time</div>
+          <div class="stat-label">Market Price Ticks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">Audited</div>
+          <div class="stat-label">Transaction Log Ledger</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE INTERACTIVE TRADING APP -->
+    <section class="demo-section" id="demo">
+      <div class="section-head">
+        <div>
+          <h2>Simulated Stock Exchange Terminal</h2>
+          <p>Execute live orders with $10,000 virtual balance. Prices fluctuate dynamically just like the Java <code style="color:var(--primary-light)">Market.tickMarket()</code> algorithm.</p>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button class="btn secondary sm" onclick="tickMarket()">⚡ Fluctuate Prices</button>
+          <button class="btn sm" id="btn-auto-tick" onclick="toggleAutoTick()">▶ Auto-Tick Market</button>
+        </div>
+      </div>
+
+      <div class="demo-window">
+        <div class="demo-titlebar">
+          <div class="demo-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="demo-title">
+            <span>Market.java · NASDAQ Simulator</span>
+            <span class="demo-badge">LIVE FEED</span>
+          </div>
+          <div id="market-status" style="font-size:0.8rem; color:#34d399;">● MARKET OPEN</div>
+        </div>
+
+        <div class="demo-body">
+          <!-- PORTFOLIO SUMMARY CARDS -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin-bottom:24px;">
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:18px;">
+              <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.8px;">Available Cash</span>
+              <div style="font-size:1.8rem; font-weight:800; color:var(--text);" id="wallet-cash">$10,000.00</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:18px;">
+              <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.8px;">Stock Holdings Value</span>
+              <div style="font-size:1.8rem; font-weight:800; color:#60a5fa;" id="wallet-equity">$0.00</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:18px;">
+              <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.8px;">Total Net Worth</span>
+              <div style="font-size:1.8rem; font-weight:800; color:var(--primary-light);" id="wallet-total">$10,000.00</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:18px;">
+              <span style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.8px;">Total Return (P&amp;L)</span>
+              <div style="font-size:1.8rem; font-weight:800; color:#34d399;" id="wallet-pnl">+$0.00 (0.0%)</div>
+            </div>
+          </div>
+
+          <!-- LIVE MARKET TICKER CARDS -->
+          <div class="stock-grid" id="marketCards">
+            <!-- Dynamically injected -->
+          </div>
+
+          <!-- ORDER EXECUTION FORM -->
+          <div style="background:rgba(0,0,0,0.3); border:1px solid var(--line); border-radius:14px; padding:22px; margin-bottom:24px;">
+            <h3 style="font-size:1.1rem; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <span>⚡</span> Trade Order Execution Panel
+            </h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Selected Asset</label>
+                <select id="tradeStock" class="form-control" onchange="updateTradeEstimate()">
+                  <!-- Injected options -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Order Action</label>
+                <select id="tradeAction" class="form-control" onchange="updateTradeEstimate()">
+                  <option value="BUY">BUY (Long)</option>
+                  <option value="SELL">SELL (Exit)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Quantity of Shares</label>
+                <input type="number" id="tradeQty" class="form-control" min="1" step="1" value="5" oninput="updateTradeEstimate()">
+              </div>
+              <div class="form-group">
+                <label>Estimated Total Cost</label>
+                <div style="padding:10px 14px; background:rgba(255,255,255,0.04); border:1px solid var(--line); border-radius:var(--radius-sm); font-size:1rem; font-weight:800; color:var(--primary-light);" id="tradeTotal">
+                  $0.00
+                </div>
+              </div>
+              <div class="form-group" style="align-self: flex-end;">
+                <button class="btn" style="width:100%;" onclick="executeOrder()">Submit Trade Order</button>
+              </div>
+            </div>
+            <div id="tradeNotice" style="font-size:0.85rem; color:var(--text-dim); margin-top:6px;">Select stock and quantity to compute estimated execution cost.</div>
+          </div>
+
+          <!-- PORTFOLIO HOLDINGS & TRANSACTION LEDGER TABS -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <h3 style="font-size:1.15rem;">My Active Portfolio Holdings</h3>
+            <span style="font-size:0.85rem; color:var(--text-dim);" id="holdings-count">0 Positions Active</span>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Company</th>
+                  <th>Shares Owned</th>
+                  <th>Avg Price Paid</th>
+                  <th>Current Price</th>
+                  <th>Current Value</th>
+                  <th>Gain / Loss</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="holdingsTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- TRANSACTION HISTORY -->
+          <div style="margin-top:24px;">
+            <h4 style="font-size:1rem; color:var(--text-muted); margin-bottom:12px;">Transaction Audit Log</h4>
+            <div class="table-container" style="max-height: 220px; overflow-y:auto;">
+              <table class="data-table" style="font-size:0.85rem;">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>Symbol</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody id="txTableBody">
+                  <!-- Injected transaction items -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO DEMO SHOWCASE -->
+    <section class="demo-section" id="video">
+      <div class="section-head">
+        <div>
+          <h2>Official Video Walkthrough</h2>
+          <p>Watch the full console run showcasing real-time market movements, order execution, and portfolio balance audits.</p>
+        </div>
+        <span class="tag">TASK 2.mp4</span>
+      </div>
+
+      <div class="video-card">
+        <div class="video-header">
+          <h3><span>▶</span> Task 2 Demonstration — Stock Trading Platform In Action</h3>
+          <span style="font-size:0.82rem; color:var(--primary-light);">Full HD Recording</span>
+        </div>
+        <div class="video-player-box">
+          <video controls preload="metadata">
+            <source src="TASK 2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-footer">
+          <div>Recorded by <strong>Nisha N</strong> · CodeAlpha Java Internship Task 2</div>
+          <a href="TASK 2.mp4" download class="btn secondary sm">Download Video ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODE ARCHITECTURE & SYSTEM DESIGN -->
+    <section class="demo-section" id="architecture">
+      <div class="section-head">
+        <div>
+          <h2>System Architecture & Java OOP Design</h2>
+          <p>Engineered with modular abstraction: separate market feeds, portfolio state, and immutable transaction records.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:30px;">
+        <div class="stat-card">
+          <h3 style="color:var(--primary-light); margin-bottom:6px;">Market.java</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem;">
+            Maintains the registry of equities via <code style="color:#60a5fa;">LinkedHashMap&lt;String, Stock&gt;</code>. Runs the stochastic volatility simulation <code style="color:#fde047;">tickMarket()</code>.
+          </p>
+        </div>
+        <div class="stat-card">
+          <h3 style="color:#60a5fa; margin-bottom:6px;">Stock.java</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem;">
+            Encapsulates ticker symbol, company name, previous price, and current price, computing point changes and percentage shifts.
+          </p>
+        </div>
+        <div class="stat-card">
+          <h3 style="color:#a78bfa; margin-bottom:6px;">Portfolio.java</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem;">
+            Manages liquidity balance, tracks share holdings, executes buying power checks, and computes net market value.
+          </p>
+        </div>
+        <div class="stat-card">
+          <h3 style="color:#fbbf24; margin-bottom:6px;">Transaction.java</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem;">
+            An immutable audit log storing BUY/SELL action enums, share volume, unit price, and timestamp for reporting.
+          </p>
+        </div>
+      </div>
+
+      <!-- CODE EXPLORER TABS -->
+      <div class="code-panel">
+        <div class="code-header">
+          <div class="code-tabs">
+            <button class="code-tab active" onclick="switchCode('market')">Market.java</button>
+            <button class="code-tab" onclick="switchCode('portfolio')">Portfolio.java</button>
+          </div>
+          <span>Java 25 LTS</span>
+        </div>
+        <pre class="code-block" id="codeDisplay"><span class="kw">public class</span> <span class="type">Market</span> {
+    <span class="kw">private</span> <span class="type">Map&lt;String, Stock&gt;</span> stocks;
+    <span class="kw">private</span> <span class="type">Random</span> random;
+
+    <span class="kw">public void</span> <span class="fn">tickMarket</span>() {
+        <span class="kw">for</span> (<span class="type">Stock</span> stock : stocks.<span class="fn">values</span>()) {
+            <span class="type">double</span> change = (random.<span class="fn">nextDouble</span>() - <span class="num">0.48</span>) * stock.<span class="fn">getPrice</span>() * <span class="num">0.03</span>;
+            <span class="type">double</span> newPrice = <span class="type">Math</span>.<span class="fn">max</span>(<span class="num">1.0</span>, stock.<span class="fn">getPrice</span>() + change);
+            stock.<span class="fn">updatePrice</span>(newPrice);
+        }
+    }
+}</pre>
+      </div>
+    </section>
+
+    <!-- TERMINAL RUN GUIDE -->
+    <section class="demo-section" id="terminal">
+      <div class="section-head">
+        <div>
+          <h2>How to Run Locally in Terminal</h2>
+          <p>Launch the interactive console application inside your local Java environment.</p>
+        </div>
+      </div>
+
+      <div style="background:#090e1a; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px;">
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:12px;">Navigate into the task directory and compile with javac:</p>
+        <pre style="background:#04070e; padding:14px; border-radius:8px; border:1px solid var(--line); color:#34d399; font-family:var(--font-mono); font-size:0.92rem; overflow-x:auto;">
+cd Task2_StockTradingPlatform
+javac *.java
+java Main</pre>
+      </div>
+    </section>
+
+    <!-- PROJECT NAVIGATOR -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-top:1px solid var(--line); margin-top:60px; flex-wrap:wrap; gap:16px;">
+      <a href="student-grade-tracker.html" class="btn secondary">← Previous: Student Grade Tracker</a>
+      <a href="alphabot-chatbot.html" class="btn">Next Project: AlphaBot AI Chatbot →</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-wrap">
+    <div class="wrap footer-content">
+      <div>
+        © 2026 <strong>Nisha N</strong> · CodeAlpha Java Programming Internship
+      </div>
+      <div class="footer-nav">
+        <a href="student-grade-tracker.html">Task 1</a>
+        <a href="stock-trading-platform.html">Task 2</a>
+        <a href="alphabot-chatbot.html">Task 3</a>
+        <a href="hotel-reservation.html">Task 4</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ENGINE -->
+  <script>
+    let cash = 10000.00;
+    const initialCash = 10000.00;
+    let holdings = {}; // symbol: { shares, totalCost }
+    let transactions = [];
+    let autoTickInterval = null;
+
+    const stocks = {
+      AAPL: { name: "Apple Inc.", price: 182.50, prev: 180.20 },
+      GOOGL: { name: "Alphabet Inc.", price: 140.25, prev: 141.10 },
+      MSFT: { name: "Microsoft Corp.", price: 415.80, prev: 412.30 },
+      AMZN: { name: "Amazon.com Inc.", price: 185.90, prev: 184.00 },
+      TSLA: { name: "Tesla Inc.", price: 245.60, prev: 250.10 },
+      NVDA: { name: "NVIDIA Corp.", price: 875.40, prev: 860.00 },
+      META: { name: "Meta Platforms", price: 480.20, prev: 476.50 },
+      NFLX: { name: "Netflix Inc.", price: 630.75, prev: 635.00 }
+    };
+
+    function renderMarket() {
+      const container = document.getElementById("marketCards");
+      const select = document.getElementById("tradeStock");
+      const currentSelected = select.value || "AAPL";
+
+      container.innerHTML = "";
+      select.innerHTML = "";
+
+      for (const [sym, s] of Object.entries(stocks)) {
+        const change = s.price - s.prev;
+        const changePct = (change / s.prev) * 100;
+        const isUp = change >= 0;
+
+        const card = document.createElement("div");
+        card.className = `stock-card ${sym === currentSelected ? 'selected' : ''}`;
+        card.onclick = () => {
+          select.value = sym;
+          updateTradeEstimate();
+          document.querySelectorAll('.stock-card').forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+        };
+
+        card.innerHTML = `
+          <div class="stock-card-top">
+            <span class="stock-sym">${sym}</span>
+            <span class="tag ${isUp ? 'primary' : ''}" style="color:${isUp ? '#34d399' : '#f87171'};">
+              ${isUp ? '▲ +' : '▼ '}${changePct.toFixed(2)}%
+            </span>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-dim); margin-bottom:8px;">${s.name}</div>
+          <div class="stock-price ${isUp ? 'price-up' : 'price-down'}">$${s.price.toFixed(2)}</div>
+        `;
+        container.appendChild(card);
+
+        const opt = document.createElement("option");
+        opt.value = sym;
+        opt.innerText = `${sym} - $${s.price.toFixed(2)} (${s.name})`;
+        select.appendChild(opt);
+      }
+
+      select.value = currentSelected;
+      updateTradeEstimate();
+      renderHoldings();
+    }
+
+    function tickMarket() {
+      for (const sym in stocks) {
+        const s = stocks[sym];
+        s.prev = s.price;
+        const delta = (Math.random() - 0.48) * s.price * 0.025;
+        s.price = Math.max(1.0, s.price + delta);
+      }
+      renderMarket();
+    }
+
+    function toggleAutoTick() {
+      const btn = document.getElementById("btn-auto-tick");
+      if (autoTickInterval) {
+        clearInterval(autoTickInterval);
+        autoTickInterval = null;
+        btn.innerText = "▶ Auto-Tick Market";
+        btn.classList.remove("danger");
+      } else {
+        autoTickInterval = setInterval(tickMarket, 2500);
+        btn.innerText = "⏸ Pause Auto-Tick";
+        btn.classList.add("danger");
+      }
+    }
+
+    function updateTradeEstimate() {
+      const sym = document.getElementById("tradeStock").value;
+      const qty = parseInt(document.getElementById("tradeQty").value) || 0;
+      const action = document.getElementById("tradeAction").value;
+      const stock = stocks[sym];
+
+      if (!stock || qty <= 0) {
+        document.getElementById("tradeTotal").innerText = "$0.00";
+        document.getElementById("tradeNotice").innerText = "Enter a valid quantity.";
+        return;
+      }
+
+      const total = stock.price * qty;
+      document.getElementById("tradeTotal").innerText = `$${total.toFixed(2)}`;
+
+      if (action === "BUY") {
+        if (total > cash) {
+          document.getElementById("tradeNotice").innerHTML = `<span style="color:#f87171;">⚠️ Insufficient funds. You need $${(total - cash).toFixed(2)} more.</span>`;
+        } else {
+          document.getElementById("tradeNotice").innerHTML = `<span style="color:#34d399;">✓ Order verified. Available cash after buy: $${(cash - total).toFixed(2)}.</span>`;
+        }
+      } else {
+        const owned = holdings[sym] ? holdings[sym].shares : 0;
+        if (qty > owned) {
+          document.getElementById("tradeNotice").innerHTML = `<span style="color:#f87171;">⚠️ You only own ${owned} shares of ${sym}.</span>`;
+        } else {
+          document.getElementById("tradeNotice").innerHTML = `<span style="color:#34d399;">✓ Ready to sell. You will receive $${total.toFixed(2)}.</span>`;
+        }
+      }
+    }
+
+    function executeOrder() {
+      const sym = document.getElementById("tradeStock").value;
+      const qty = parseInt(document.getElementById("tradeQty").value) || 0;
+      const action = document.getElementById("tradeAction").value;
+      const stock = stocks[sym];
+
+      if (!stock || qty <= 0) return;
+      const total = stock.price * qty;
+
+      if (action === "BUY") {
+        if (total > cash) {
+          alert("Insufficient cash to execute this buy order!");
+          return;
+        }
+        cash -= total;
+        if (!holdings[sym]) {
+          holdings[sym] = { shares: 0, totalCost: 0 };
+        }
+        holdings[sym].shares += qty;
+        holdings[sym].totalCost += total;
+      } else {
+        const owned = holdings[sym] ? holdings[sym].shares : 0;
+        if (qty > owned) {
+          alert(`You only hold ${owned} shares of ${sym}!`);
+          return;
+        }
+        cash += total;
+        const avgCost = holdings[sym].totalCost / holdings[sym].shares;
+        holdings[sym].shares -= qty;
+        holdings[sym].totalCost -= (avgCost * qty);
+        if (holdings[sym].shares === 0) {
+          delete holdings[sym];
+        }
+      }
+
+      // Record transaction
+      const now = new Date().toLocaleTimeString();
+      transactions.unshift({
+        time: now,
+        type: action,
+        symbol: sym,
+        qty: qty,
+        price: stock.price,
+        total: total
+      });
+
+      renderHoldings();
+      renderTransactions();
+      updateTradeEstimate();
+    }
+
+    function renderHoldings() {
+      const tbody = document.getElementById("holdingsTableBody");
+      tbody.innerHTML = "";
+
+      let equity = 0;
+      let count = 0;
+
+      for (const sym in holdings) {
+        const h = holdings[sym];
+        const s = stocks[sym];
+        const curVal = h.shares * s.price;
+        equity += curVal;
+        count++;
+
+        const avgPrice = h.totalCost / h.shares;
+        const gain = curVal - h.totalCost;
+        const gainPct = (gain / h.totalCost) * 100;
+        const isUp = gain >= 0;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><strong>${sym}</strong></td>
+          <td>${s.name}</td>
+          <td>${h.shares}</td>
+          <td>$${avgPrice.toFixed(2)}</td>
+          <td><strong>$${s.price.toFixed(2)}</strong></td>
+          <td>$${curVal.toFixed(2)}</td>
+          <td style="color:${isUp ? '#34d399' : '#f87171'}; font-weight:700;">
+            ${isUp ? '+' : ''}$${gain.toFixed(2)} (${isUp ? '+' : ''}${gainPct.toFixed(1)}%)
+          </td>
+          <td>
+            <button class="btn secondary sm" onclick="quickSell('${sym}')">Quick Sell</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      }
+
+      if (count === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-dim); padding:24px;">No stocks owned yet. Use the Trade Panel above to execute your first order!</td></tr>`;
+      }
+
+      const netWorth = cash + equity;
+      const totalPnl = netWorth - initialCash;
+      const totalPnlPct = (totalPnl / initialCash) * 100;
+      const isProfitable = totalPnl >= 0;
+
+      document.getElementById("wallet-cash").innerText = `$${cash.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      document.getElementById("wallet-equity").innerText = `$${equity.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      document.getElementById("wallet-total").innerText = `$${netWorth.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      
+      const pnlEl = document.getElementById("wallet-pnl");
+      pnlEl.innerText = `${isProfitable ? '+' : ''}$${totalPnl.toFixed(2)} (${isProfitable ? '+' : ''}${totalPnlPct.toFixed(2)}%)`;
+      pnlEl.style.color = isProfitable ? "#34d399" : "#f87171";
+
+      document.getElementById("holdings-count").innerText = `${count} Active Position${count === 1 ? '' : 's'}`;
+    }
+
+    function quickSell(sym) {
+      document.getElementById("tradeStock").value = sym;
+      document.getElementById("tradeAction").value = "SELL";
+      document.getElementById("tradeQty").value = holdings[sym] ? holdings[sym].shares : 1;
+      updateTradeEstimate();
+    }
+
+    function renderTransactions() {
+      const tbody = document.getElementById("txTableBody");
+      tbody.innerHTML = "";
+      transactions.slice(0, 10).forEach(t => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${t.time}</td>
+          <td><span class="tag ${t.type === 'BUY' ? 'primary' : ''}" style="color:${t.type === 'BUY' ? '#34d399' : '#f87171'};">${t.type}</span></td>
+          <td><strong>${t.symbol}</strong></td>
+          <td>${t.qty}</td>
+          <td>$${t.price.toFixed(2)}</td>
+          <td>$${t.total.toFixed(2)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    const codeSnippets = {
+      market: `<span class="kw">public class</span> <span class="type">Market</span> {
+    <span class="kw">private</span> <span class="type">Map&lt;String, Stock&gt;</span> stocks;
+    <span class="kw">private</span> <span class="type">Random</span> random;
+
+    <span class="kw">public void</span> <span class="fn">tickMarket</span>() {
+        <span class="kw">for</span> (<span class="type">Stock</span> stock : stocks.<span class="fn">values</span>()) {
+            <span class="type">double</span> change = (random.<span class="fn">nextDouble</span>() - <span class="num">0.48</span>) * stock.<span class="fn">getPrice</span>() * <span class="num">0.03</span>;
+            <span class="type">double</span> newPrice = <span class="type">Math</span>.<span class="fn">max</span>(<span class="num">1.0</span>, stock.<span class="fn">getPrice</span>() + change);
+            stock.<span class="fn">updatePrice</span>(newPrice);
+        }
+    }
+}`,
+      portfolio: `<span class="kw">public class</span> <span class="type">Portfolio</span> {
+    <span class="kw">private double</span> balance;
+    <span class="kw">private</span> <span class="type">Map&lt;String, Integer&gt;</span> holdings;
+
+    <span class="kw">public boolean</span> <span class="fn">buyStock</span>(<span class="type">Stock</span> stock, <span class="type">int</span> qty) {
+        <span class="type">double</span> cost = stock.<span class="fn">getPrice</span>() * qty;
+        <span class="kw">if</span> (cost &gt; balance) <span class="kw">return false</span>;
+        balance -= cost;
+        holdings.<span class="fn">put</span>(stock.<span class="fn">getSymbol</span>(), holdings.<span class="fn">getOrDefault</span>(stock.<span class="fn">getSymbol</span>(), <span class="num">0</span>) + qty);
+        <span class="kw">return true</span>;
+    }
+}`
+    };
+
+    function switchCode(tab) {
+      document.querySelectorAll('.code-tab').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('codeDisplay').innerHTML = codeSnippets[tab];
+    }
+
+    // Startup
+    renderMarket();
+    // Pre-populate demo position
+    holdings["AAPL"] = { shares: 10, totalCost: 1800.00 };
+    holdings["NVDA"] = { shares: 2, totalCost: 1720.00 };
+    cash = 10000.00 - 1800.00 - 1720.00;
+    renderHoldings();
+  </script>
+</body>
+</html>
